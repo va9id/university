@@ -1,6 +1,6 @@
 # University Material 
 
-The following repository contains a collection of material from different university courses I have taken as a software engineering student. This repository provides links to course materials that can be found in their own respective repositories in the **[Contents](#contents)** section.
+The following repository contains a collection of material from a subset of university courses I have taken as a software engineering student. This repository acts as a navigation hub to course materials found in their own directories and are linked in the **[Contents](#contents)** section.
 
 ## Contents 
 
