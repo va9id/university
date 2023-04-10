@@ -4,7 +4,7 @@ The following repository contains a collection of material from a subset of univ
 
 ## Contents 
 
-- [Database Management Systems](https://github.com/vahido9/database-course) <img align="center" height="20" width="20" src="icons/sql_icon.png"> <img align="center" height="30" width="30" src="icons/oracle_icon.png">
+- [Database Management Systems](https://github.com/vahido9/database-course) <img height="20" width="20" src="icons/sql_icon.png"> <img height="30" width="30" src="icons/oracle_icon.png">
 - [Programming Languages](https://github.com/vahido9/racket-course)
 - [Real Time Concurrent Systems](https://github.com/vahido9/concurrent-systems-course)
     - [Elevator Real-Time System and Simulator (Project)](https://github.com/ConnorMarcus/SYSC3303Project)
