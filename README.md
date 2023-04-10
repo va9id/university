@@ -5,7 +5,7 @@ The following repository contains a collection of material from a subset of univ
 ## Contents 
  
 | Course | Programming Language | 
-| ------ | -------------------- |
+| :----- | -------------------- |
 |[Database Management Systems](https://github.com/vahido9/database-course)|<img align="center" height="25" width="25" src="icons/sql_icon.png"> <img align="center" height="30" width="35" src="icons/oracle_icon.png">|
 |[Programming Languages](https://github.com/vahido9/racket-course)|<img align="center" height="20" width="20" padding-right="10px;" src="icons/racket_icon.png"> |
 |[Real Time Concurrent Systems](https://github.com/vahido9/concurrent-systems-course) + [Project](https://github.com/ConnorMarcus/SYSC3303Project)|<img align="center" height="30" width="30" src="icons/java_icon.png">|
