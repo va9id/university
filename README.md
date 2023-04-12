@@ -19,6 +19,7 @@ The following repository contains a collection of material from a subset of univ
 
 ## Other Courses
 
-| Course |
-| ------ |
-|[Software Economy and Project Management](/courses/project-management/)||
+| Course | Content |
+| ------ | ------- |
+|Software Economy and Project Management|[Case studies](courses/project-management/case_studies/)<br>[Midterm](courses/project-management/midterm.pdf)<br>[Tutorials](courses/project-management/tutorials/) |
+|Software Architecture|[Midterm](/courses/software-architecture/)<br>[Labs](/courses/software-architecture/labs/)|
