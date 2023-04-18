@@ -1,6 +1,6 @@
 # University Material 
 
-The following repository contains a collection of material from a subset of university courses I have taken as a software engineering student. This repository acts as a navigation hub to the course materials. 
+The following repository contains a collection of material from a *subset* of university courses I have taken as a software engineering student. This repository acts as a navigation hub to the course materials. 
 - Programming course materials are in their own directories with links to them being provided in the **[Programming Course](#programming-courses)** section
 - Non-programming course materials can be found in the `courses` folder and links to them are provided in the **[Other Courses](#other-courses)** section
 
