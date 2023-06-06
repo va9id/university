@@ -1,6 +1,6 @@
 # Introduction to Web Development Course
 
-The following repository contains assignments and labs written using JavaScript, HTML, CSS and PHP for my intro to web development university course in 2021. 
+The following repository contains assignments and labs written using JavaScript, HTML, CSS and PHP for my intro to web development university course.
 
 ## Description 
 

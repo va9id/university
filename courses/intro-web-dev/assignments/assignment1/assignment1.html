@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+   <meta charset="utf-8">
+   <title>Assignment 1</title>
+   <link rel="stylesheet" href="reset.css" />
+   <link rel="stylesheet" href="assignment1.css" />
+</head>
+<body>
+<header>
+     <h1>Share Your Travels</h1>
+     <p>let us know where you've been</p>
+</header>
+<main>
+	<section>
+	<form method="post" action="__________">
+		<fieldset>
+			<legend>Photo Details</legend>
+ 				<table><tbody>
+					<tr> 
+						<td colspan="2">
+							<label for="Title">Title</label><br>
+						 	<input type="text" class="fullSizeTextBox" name="title" placeholder="Give your photo a descriptive name">
+						</td>
+					</tr>
+					<tr> 
+						<td colspan="2"> 
+                          				<label for="Description">Description</label><br>
+							<textarea rows="5" class="fullSizeTextBox" name="Description" placeholder="Adding a rich description will help with search results"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="Continent">Continent</label><br>
+							<select name="Continent" class="selectsize">
+								<option value="Choose Continent">Choose Continent</option>
+								<option value="Africa">Africa</option>
+								<option value="Antartica">Antartica</option>
+								<option value="Asia">Asia</option>
+								<option value="Australia">Australia</option>
+								<option value="North America">North America</option>
+								<option value="South America">South America</option>
+							</select><br>
+
+							<br><label for="Country">Country</label><br>
+							<select name="Country" class="selectsize">
+								<option value="Choose Country">Choose Country</option>
+								<option value="Algeria">Algeria</option>
+								<option value="Brazil">Brazil</option>
+								<option value="Canada">Canada</option>
+								<option value="Iran">Iran</option>
+								<option value="New Zealand">New Zealand</option>
+								<option value="Portugal">Portugal</option>
+							</select><br>
+							
+							<br><label for="city">City</label><br>
+							<input type="text" name="city" class="selectsize"><br><br>					
+						</td>
+						<td>
+							<div class="Border2ndCol">
+								<label for="copyright">Copyright?</label><br>
+								<input type="radio" name="copyright" value="1">All rights reserved<br>
+								<input type="radio" name="copyright" value="2">Creative Commons
+							</div>
+							<br>
+							<div class="Border2ndCol">
+								<label for="CCT[]">Creative Commons Types</label><br>
+								<input type="checkbox" name="CCT[]" value="1">Attribution<br>
+								<input type="checkbox" name="CCT[]" value="2">Noncommercial<br>
+								<input type="checkbox" name="CCT[]" value="3">No Derivative Works<br>
+							</div>
+						</td>
+					</tr>	
+					<tr>
+						<td colspan="2">
+							<div class="OtherDarkBlue">
+								<label for="accept">I accept the software license</label>
+								<input type="checkbox" name="accept" value="yes">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+				  			<label for="rate">Rate this photo:</label><br>
+			 				<input type="number" id="rateBox" name="rate"><br><br>
+						
+			  				<label for="colour">Color Collection</label><br>
+			 				<input type="color" name="color"><br><br>
+						</td>
+						<td>
+							<div class="Border2ndCol">
+								<label for="datetaken"><br>Date Taken:</label><br>
+								<input type="date" name="datetaken"><br><br>
+							
+								<label for="timetaken">Time Taken:</label><br>
+								<input type="time" name="timetaken">	
+							</div>	
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<div class="OtherDarkBlue">	
+								<input type="submit" class= "buttons" value="Submit">
+								<input type="reset" class="buttons" value="Clear Form">
+							</div>
+						</td>
+					</tr>	
+		 	</tbody></table>
+		</fieldset>	
+	</form>
+</section>
+</main>  
+</body>
+</html>

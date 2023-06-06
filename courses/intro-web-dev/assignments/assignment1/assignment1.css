@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+/* general text formatting */
+
+h1, h2, h3, nav, footer {
+ font-family: Lobster, Cambria, "Times New Roman", serif;
+}
+body {
+   font-family: "Open Sans", Verdana, Arial, sans-serif;
+   font-size: 100%;
+   background-color: #E8EAF6;
+}
+
+
+/* header and navigation */
+
+header, footer {
+  color: white;
+  background-color: #1A237E;
+  margin: 0em 4em 0.25em 4em;
+}
+header h1 { 
+  padding: 0.5rem 0 0 1.25rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+header p { 
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding: 0 0 0 1.25rem;
+}
+
+
+/* main article styling */
+main {
+   background-color: white;
+   margin: 1em 4em 1em 4em;
+   padding: 1em;
+}
+
+section {
+   margin-bottom: 1em;
+   padding: 0;
+   width: 100%;
+}
+
+
+legend { 
+  font-size: 1.35rem;
+  background-color: #7986CB;
+  height: 1.70rem;
+  color: #E8EAF6;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0;
+}
+
+fieldset {
+   margin: 0;
+   padding: 0;
+   background-color: #C5CAE9;
+   width: 100%;
+   border: none;
+}
+form p {
+   margin-top: 0.5em;
+}
+
+
+
+
+
+
+table {
+	table-layout: fixed;
+	width: 100%;	
+}
+td {
+	padding: 9px;
+}
+.fullSizeTextBox {
+	width: 99%;	
+}
+.Border2ndCol {
+	border: solid;	
+	border-width: thin;
+	border-color: #7986CB;
+	padding: 5px;
+}
+.OtherDarkBlue {
+	background-color: #7986CB;
+	padding: 10px;	
+}
+.selectsize{
+	width: 300px;
+}
+.buttons {
+	background-color: #FF0080;
+	color: white; 
+	font-weight: bold; 	
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	border-radius: 8px;
+	border: 2px solid #FF0080;
+	padding: 10px 14px;
+	margin-right: 10px;
+	width: 10em;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.9);
+}
+#rateBox {
+	width: 50px;	
+}

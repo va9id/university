@@ -1,0 +1,154 @@
+/* general text formatting */
+
+body, header, nav, div, p, h1, h2, h3, h4, table {
+   margin: 0;
+   padding: 0;    
+}
+body {
+   font-family: "Roboto", Verdana, Arial, sans-serif;
+   font-size: 13px;
+    background-color: #eceff1;
+}
+
+header {
+   background-color: #37474f;
+   height: 50px;
+    padding: 15px 0 5px 25px;
+}
+header h1 {
+    font-size: 32px;
+    color: white;
+}
+header h1 span {
+    color: #ff6e40;
+}
+header+nav {
+    background-color: #607d8b;
+    color: #eceff1;
+    height: 40px;
+    font-size: 14px;
+    padding: 15px 0 5px 25px;
+}
+
+/* form formatting */
+
+fieldset {
+   margin: 15px 25px;
+background-color: #CFD8DC;
+   border: none;
+   width: 590px;
+   padding: 0.5em;
+}
+legend {    
+    width: 80%;
+}
+fieldset p {
+   margin: 14px;
+    font-size: 14px;
+}
+fieldset input[type="radio"], fieldset input[type="checkbox"] {
+    width:  16px; 
+    height:  16px; 
+}
+fieldset input[type="text"], fieldset input[type="date"]  {
+    height:  28px; 
+}
+fieldset input[type="submit"] {
+    margin-left: 14px;
+    height: 36px;
+    background-color: #ff6e40;
+    color: white;
+    font-size:16px;
+    width: 100px;
+    
+}
+
+
+
+/* table formatting */
+
+table {
+    margin: 15px 25px;
+    color: #666;
+    font-size: 15px;
+    width: 600px
+}
+table a {
+	color: #6200EA;
+}
+table caption, legend {
+	background-color: #90A4AE;
+    color: white;
+	font-size: 17px;
+	padding: 12px 0 8px 0;
+	text-align: center;
+}
+table thead th {
+	font-size: 11px;
+	padding: 5px 0;
+	color: #666;
+	text-transform: uppercase;
+	background-color: #CFD8DC;
+}
+table tbody td {
+	color: #666;
+	padding: 20px 16px;
+	text-align: center;
+	font-weight: bold;
+	border: 1px solid;
+	border-color: #eceff1;
+	background: white;
+}
+table tbody td.pad {
+	background: #CFD8DC;
+}
+tfoot{
+	color: #e0e0e0;
+	font-size: 14px;
+	text-align: center;
+}
+table tfoot tr{
+	background: #CFD8DC;
+}
+table tfoot td{
+	padding: 10px 10px;
+}
+table tfoot a{
+	color: #6200EA;
+}
+table tfoot td#prev {
+	text-align: left;
+}
+table tfoot td#next {
+	text-align: right;
+}
+
+#today{
+	color: #fff;
+	border: 1px solid #467b89;
+	background-color: #607d8b;
+}
+
+button { 
+    height: 36px;
+    background-color: #673AB7;
+    color: white;
+    font-size:16px;
+    margin: 5px 0 0 45px;
+}
+
+
+
+.hoverNode{
+background-color:#FFFFCC;
+border: solid 1px black;
+width:100px;
+height:100px;
+position:realtive;
+float:top;
+font-size:10pt;
+margin:5px;
+padding:3px;
+color:black;
+}
+
