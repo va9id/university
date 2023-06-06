@@ -1,0 +1,173 @@
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #E5EFFF;
+	font-family: Arial;
+}
+header {
+	width: 100%;	
+}
+a:hover {
+	background-color: purple;
+}
+#mainMenu ul {
+	background-color: #001424;
+	direction: rtl;
+	text-align: right;
+	text-indent: 50px;
+	padding: 2px;
+	font-size: 11px;
+	font-weight: bold;
+	height: 15%;
+}
+#mainMenu li {
+	display: inline;
+	margin-right: 5px;
+}
+#mainMenu a {
+	color: #33BBFF;	
+}
+h1 {
+	background-image: url("../images/header-background.png");	
+	padding: 5px;
+	color: white;
+	font-weight: regular;
+	text-indent: 50px;
+	font-size: 24px;
+	height: 60%;
+}
+h1 span {
+	color: #F54900;
+}
+#secondaryMenu ul {
+	background-color: #4F7492;
+	height: 25%;
+	text-indent: 50px;
+	padding: 2px;
+	font-size: 12px;
+	height: 15%;
+}
+#secondaryMenu li {
+	display: inline;
+	margin-right: 10px;
+}
+#secondaryMenu a {
+	color: #33BBFF;
+}
+article > div {
+	background-color: #FFFFFF;
+	padding-top: 10px;
+	text-align: center;
+	font-size: 21px;
+	margin-top: 10px;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
+div img{
+	border: 2px solid;
+	padding: 5px;
+}
+article section {
+	border: solid;	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+section h3{
+	background-image: url("../images/header-background.png");	
+	color: white;
+	font-size: 12px;
+	padding: 5px;
+	text-indent: 5px;
+}
+section p {
+	background-color: #FFFFFF;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+section em{
+	font-weight: normal;
+
+
+}
+section em + a{
+	color: #33BBFF;
+}
+section em + a[href*="tel"] {
+	background-image: url("../images/call.png");
+	background-repeat: no-repeat;
+	background-position: left;
+ 	padding-left: 15px;
+}
+section em + a[href*="mail"] {
+	background-image: url("../images/email.png");
+	background-repeat: no-repeat;
+	background-position: left;
+ 	padding-left: 15px;
+}
+section img{
+	height: 100%;
+	width: 100%;
+}
+.actions {
+	background-color: #4F7492;
+	padding: 5px;
+}
+.actions li{
+	display: inline;
+}
+
+.actions a {
+	text-decoration: none;	
+}
+.actionEdit {
+	background-color: #F54900;
+	color: white; 
+	font-weight: bold; 
+	font-size: 10px;
+	border: 2px solid #F54900;
+	border-radius: 4px;
+	width: 20px;
+	background-image: url("../images/edit.png");
+	background-repeat: no-repeat;
+	background-position: left;
+ 	padding-left: 15px;
+	padding-top: 3px;
+	padding-bottom: 1px;
+	padding-right: 5px;
+}
+.actionFlag {
+	background-color: #F54900;
+	color: white; 
+	font-weight: bold; 
+	font-size: 10px;
+	border: 2px solid #F54900;
+	border-radius: 4px;
+	width: 20px;
+	background-image: url("../images/flag.png");
+	background-repeat: no-repeat;
+	background-position: left;
+ 	padding-left: 15px;
+	padding-top: 3px;
+	padding-bottom: 1px;
+	padding-right: 5px;
+	text-align: right;
+}
+footer{
+	background-color: #001424;
+	text-indent: 50px;
+	color: white;
+	font-size: 12px;
+	font-style: italic;
+	padding: 5px;
+	border-bottom: 100px solid #E5EFFF;
+}
+footer a{
+	color: #33BBFF;
+	font-style: normal;
+}
