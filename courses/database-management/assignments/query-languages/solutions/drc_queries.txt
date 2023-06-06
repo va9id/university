@@ -1,0 +1,31 @@
+1. { N | (exists C, B) ( Customer(C, ‘Last’, _, _) and Account(C, B, _) and Bank(B, N, _))};
+
+2. { N | (exists B, C) ( Bank(B, ‘Royal’, _) and Account(C, B, _) and Customer(C, N, _, _))};
+
+3. { N | (exists C, Bal) ( Account(C, _, Bal) and Bal < 3000 and Customer(C, N, _, _) )};
+
+4. { CN, BN| (exists C, B) ( Customer(C, CN, _, _) and Account(C, B, _) and Bank(B, BN, _))};
+
+5. { N | (exists C) (Customer(C, N, _, _) and not Account(C, _, _))}; 
+
+6. { N | (exists C) (Customer(C, N, _, _) and (forall B) (not Bank(B, _, _ ) or Account(C, B, _) ))};
+
+7. { N | (exists C) ( Customer (C, N, _, _) and
+    (forall B) (
+        (not (exists BN)( Bank(B, BN, _) and BN != 'France' or Account(C, B, _))) 
+        and
+        (not (exists BN)(Bank(B, BN, _) and BN = 'France' or not Account(C, B, _)))))}; 
+
+8. { N | (exists C1)( Customer (C1, N, _, _) and N != ‘Clark’ and
+    (exists C)(Customer (C, ‘Clark’ , _, _) and 
+    (forall B) ( not(Bank(B,_, _) and Account(C, B, _)) or Account(C1, B, _)))}; 
+
+9. { N | (exists C1)( Customer(C1, N, _, _) and N != ‘Clark’ and
+    (exists C)( Customer (C, ‘Clark', _, _) and
+    (forall B) (
+        (not ( Bank(B, _, _) and Account(C, B, _)) or Account (C1, B,_))
+        and
+        (not ( Bank (B,_,_) and not Account (C, B, _)) or not Account (C1, B,_ ))))}; 
+
+10. T(N, B) := { N, COUNT(B) | (exists C) ( Customer(C, N, _, _) and Account(C, B, _))};
+    { N | (exists B) (T(N, C) and C > 2)};

@@ -1,0 +1,29 @@
+1. { B.Name | B in Bank and (exists C in Customer)(exists A in Account)(C.Name = 'Last' and C.C# = A.C# and A.B# = B.B#)};
+
+2. { C.Name | C in Customer and (exists B in Bank)(exists A in Account)(B.Name = 'Royal' and C.C# = A.C# and A.B# = B.B#)};
+
+3. { C.Name | C in Customer and (exists A in Account)(A.Balance < 3000 and A.C# = C.C#)};
+
+4. {C.Name, B.Name | C in Customer and B in Bank and (exists A in Account)(C.C# = A.C# and A.B# = B.B#)}; 
+
+5. { C.Name | C in Customer and not(exists A in Account)(A.C# = C.C#)}; 
+
+6. {C.Name | C in Customer and (forall B in Bank)(exists A in Account)(C.C# = A.C# and   A.B# = B.B#)};
+
+7. {C.Name | C in Customer and (forall B in Bank) (
+    (B.Name = ‘France’ and not(exists A in Account)(C.C# = A.C# and A.B# = B.B#))
+    or	
+    (B.Name != ‘France’) and (exists A in Account)(C.C# = A.C# and A.B# = B.B#)) )};
+ 
+8. { C1.Name | C1 in Course and C1.Name != ‘Clark’ and (exists C in Customer)( C.Name = ‘Clark’ and (forall B in Bank) (exists A in Account)( C.C# = A.C# and A.B# = B.B#) and (exists A1 in Account)(C1.C# = A1.C# and A1.B # = B.B#))}; 
+
+9. { C1.name| C1 in customer and C1.name!='Clark' and 
+    (exists C in customer) (C.name='Clark' and (forall B in bank)(
+    (exists A in account, A1 in account) 
+    (C.C#=A.C# and A.B#=B.B# and C1.C#=A1.C# and A1.B#=B.B#)
+    or
+    not (exists A in account, A1 in account)
+    (C.C#=A.C# and A.B#=B.B# and C1.C#=A1.C# and A1.B#=B.B#)))}
+
+10. T := { C.Name, count(A.B#) as Count| C in Customer and A in Account and C.C# = A.C# }; 
+    { C.Name | C in T and C.Count > 2}; 
