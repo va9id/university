@@ -1,11 +1,7 @@
 # University Material 
-
-The following repository contains a collection of material from a *subset* of university courses I have taken as a software engineering student. This repository acts as a navigation hub to the course materials. 
-
-- Course materials are linked below in the **[Programming Courses](#programming-courses)** and **[Other Courses](#other-courses)** section
-
+Navigation hub for a *subset* of university course material from my B.Eng Software Engineering undergrad at Carleton University. 
 ## Programming Courses
- 
+
 | Course | Programming Language | 
 | ------ | -------------------- |
 |[Database Management Systems](/courses/database-management/)|<img align="center" height="32" width="32" src="icons/sql_icon.png"> <img align="center" height="32" width="35" src="icons/oracle_icon.png">|
