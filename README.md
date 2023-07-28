@@ -14,5 +14,5 @@
 ## Other Courses
 | Course | Content |
 | ------ | ------- |
-|[SYSC 4120: Software Architecture](courses/software-architecture/)|[Midterm](courses/software-architecture/midterm.pdf), [Labs](courses/software-architecture/labs/)|
-|[SYSC 4106: Software Economy and Project Management](courses/project-management/)|[Case studies](courses/project-management/case-studies/), [Midterm](courses/project-management/midterm.pdf), [Tutorials](courses/project-management/tutorials/) |
+|[SYSC 4120: Software Architecture](courses/SYSC4120/)|[Midterm](courses/SYSC4120/midterm.pdf), [Labs](courses/SYSC4120/labs/)|
+|[SYSC 4106: Software Economy and Project Management](courses/SYSC4106/)|[Case studies](courses/SYSC4106/case-studies/), [Midterm](courses/SYSC4106/midterm.pdf), [Tutorials](courses/SYSC4106/tutorials/) |
