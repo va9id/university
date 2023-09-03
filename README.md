@@ -1,5 +1,5 @@
 # University Material 
-*Subset* of university course material from my B.Eng Software Engineering undergrad at Carleton University. 
+Subset of university course material from my B. Eng Software Engineering at Carleton University. 
 ## Programming Courses
 | Course | Programming Language | 
 | ------ | -------------------- |
