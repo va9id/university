@@ -3,6 +3,7 @@ Subset of university course material from my B. Eng Software Engineering at Carl
 ## Programming Courses
 | Course | Programming Language | 
 | ------ | -------------------- |
+|[SYSC 4806: Software Engineering Lab](https://github.com/va9id/sysc4806)|<img align="center" height="32" width="32" src="icons/java_icon.png">|
 |[COMP 3005: Database Management Systems](/courses/COMP3005/)|<img align="center" height="32" width="32" src="icons/sql_icon.png"> <img align="center" height="32" width="35" src="icons/oracle_icon.png">|
 |[SYSC 3101: Programming Languages](/courses/SYSC3101/)|<img align="center" height="32" width="32" padding-right="10px;" src="icons/racket_icon.png"> |
 |[SYSC 3303: Real Time Concurrent Systems](https://github.com/va9id/concurrent-systems) + [Project](https://github.com/va9id/elevator-simulator)|<img align="center" height="32" width="32" src="icons/java_icon.png">|
