@@ -3,6 +3,7 @@ Subset of university course material from my B. Eng Software Engineering at Carl
 ## Programming Courses
 | Course | Programming Language | 
 | ------ | -------------------- |
+|[COMP 4102: Computer Vision](https://github.com/va9id/computer-vision)|<img align="center" height="32" width="32" src="icons/python_icon.png">|
 |[SYSC 4810: Network and Software Security](https://github.com/va9id/sysc4810)|<img align="center" height="32" width="32" src="icons/python_icon.png">|
 |[SYSC 4806: Software Engineering Lab](https://github.com/va9id/sysc4806) + [Project](https://github.com/va9id/SYSC4806Project)|<img align="center" height="32" width="32" src="icons/java_icon.png">|
 |[COMP 3005: Database Management Systems](/courses/COMP3005/)|<img align="center" height="32" width="32" src="icons/sql_icon.png"> <img align="center" height="32" width="35" src="icons/oracle_icon.png">|
