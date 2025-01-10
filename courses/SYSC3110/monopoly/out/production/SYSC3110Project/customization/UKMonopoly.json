@@ -1,0 +1,31 @@
+{
+   "propertyNames":{
+      "Mediterranean Avenue":"Old Kent Road",
+      "Baltic Avenue":"Whitechapel Road",
+      "Oriental Avenue":"The Angel Islington",
+      "Vermont Avenue":"Euston Road",
+      "Connecticut Avenue":"Pentonville Road",
+      "St. Charles Place":"Pall Mall",
+      "States Avenue":"Whitehall",
+      "Virginia Avenue":"Northumrl'd Avenue",
+      "St. James Place":"Bow Street",
+      "Tennessee Avenue":"Marlborough Street",
+      "New York Avenue":"Vine Street",
+      "Kentucky Avenue":"Strand",
+      "Indiana Avenue":"Fleet Street",
+      "Illinois Avenue":"Trafalgar Square",
+      "Atlantic Avenue":"Leicester Square",
+      "Ventnor Avenue":"Conventry Street",
+      "Marvin Gardens":"Piccadilly",
+      "Pacific Avenue":"Regent Street",
+      "North Carolina Avenue":"Oxford Street",
+      "Pennsylvania Avenue":"Bond Street",
+      "Park Place":"Park Lane",
+      "Boardwalk":"Mayfair",
+      "Reading Railroad":"Kings Cross Station",
+      "Pennsylvania Railroad":"Marylebone Station",
+      "B&O Railroad":"Fenchurch St. Station",
+      "Short Line":"Liverpool St. Station"
+   },
+   "currency":"£"
+}

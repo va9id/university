@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="com_fasterxml_jackson_databind">
+    <output-path>$PROJECT_DIR$/out/artifacts/com_fasterxml_jackson_databind</output-path>
+    <root id="root">
+      <element id="library" level="project" name="com.fasterxml.jackson.databind" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SYSC3110Project:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SYSC3110Project_jar</output-path>
+    <root id="archive" name="SYSC3110Project.jar">
+      <element id="module-output" name="SYSC3110Project" />
+      <element id="module-source" name="SYSC3110Project" />
+      <element id="library" level="module" name="JUnit4" module-name="SYSC3110Project" />
+      <element id="artifact" artifact-name="com_fasterxml_jackson_databind" />
+      <element id="artifact" artifact-name="jackson-annotations-2_13_0" />
+      <element id="artifact" artifact-name="jackson-core" />
+    </root>
+  </artifact>
+</component>

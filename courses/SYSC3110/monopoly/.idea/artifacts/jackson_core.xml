@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="jackson-core">
+    <output-path>$PROJECT_DIR$/out/artifacts/jackson_core</output-path>
+    <root id="root">
+      <element id="library" level="project" name="jackson-core" />
+    </root>
+  </artifact>
+</component>

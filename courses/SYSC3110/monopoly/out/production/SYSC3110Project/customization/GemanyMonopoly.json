@@ -1,0 +1,31 @@
+{
+   "propertyNames":{
+      "Mediterranean Avenue":"Badstrasse",
+      "Baltic Avenue":"Turmstrasse",
+      "Oriental Avenue":"Chaussee Strasse",
+      "Vermont Avenue":"Elisenstrasse",
+      "Connecticut Avenue":"Poststrasse",
+      "St. Charles Place":"Seestrasse",
+      "States Avenue":"Hafenstrasse",
+      "Virginia Avenue":"Neue Strasse",
+      "St. James Place":"Münchener Strasse",
+      "Tennessee Avenue":"Wiener Strasse",
+      "New York Avenue":"Berliner Strasse",
+      "Kentucky Avenue":"Theater Strasse",
+      "Indiana Avenue":"Museum Strasse",
+      "Illinois Avenue":"Opernplatz",
+      "Atlantic Avenue":"Lessing Strasse",
+      "Ventnor Avenue":"Schiller Strasse",
+      "Marvin Gardens":"Goethe Strasse",
+      "Pacific Avenue":"Rathauplatz",
+      "North Carolina Avenue":"Hauptstrasse",
+      "Pennsylvania Avenue":"Bahnhof Strasse",
+      "Park Place":"Parkstrasse",
+      "Boardwalk":"Schlossallee",
+      "Reading Railroad":"Gesundbrunnen",
+      "Pennsylvania Railroad":"Westbahnhof",
+      "B&O Railroad":"Nordbahnhof",
+      "Short Line":"Hauptbahnhof"
+   },
+   "currency":"€"
+}

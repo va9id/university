@@ -1,0 +1,31 @@
+{
+   "propertyNames":{
+      "Mediterranean Avenue":"Duckworth Street",
+      "Baltic Avenue":"Signal Hill Road",
+      "Oriental Avenue":"Waterloo Row",
+      "Vermont Avenue":"King Street",
+      "Connecticut Avenue":"Queen Street",
+      "St. Charles Place":"University Avenue",
+      "States Avenue":"Barrington Street",
+      "Virginia Avenue":"Spring Garden Road",
+      "St. James Place":"Rue St-Jean",
+      "Tennessee Avenue":"Rue St-Catherine",
+      "New York Avenue":"Rue St-Jacques",
+      "Kentucky Avenue":"Sussex Drive",
+      "Indiana Avenue":"Yonge Street",
+      "Illinois Avenue":"Bay Street",
+      "Atlantic Avenue":"Portage and Main",
+      "Ventnor Avenue":"Victoria Avenue",
+      "Marvin Gardens":"Albert Street",
+      "Pacific Avenue":"Jasper Avenue",
+      "North Carolina Avenue":"St. Albert Trail",
+      "Pennsylvania Avenue":"Macleod Trail",
+      "Park Place":"Granville Street",
+      "Boardwalk":"Douglas Street",
+      "Reading Railroad":"CN Rail",
+      "Pennsylvania Railroad":"Ontario Northland",
+      "B&O Railroad":"CP Rail",
+      "Short Line":"BC Rail"
+   },
+   "currency":"$"
+}

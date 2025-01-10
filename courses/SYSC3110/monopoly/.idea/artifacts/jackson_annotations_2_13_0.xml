@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="jackson-annotations-2_13_0">
+    <output-path>$PROJECT_DIR$/out/artifacts/jackson_annotations_2_13_0</output-path>
+    <root id="root">
+      <element id="library" level="project" name="jackson-annotations-2.13.0" />
+    </root>
+  </artifact>
+</component>
