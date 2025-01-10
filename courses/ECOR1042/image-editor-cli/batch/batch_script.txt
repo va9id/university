@@ -1,0 +1,2 @@
+dog1.jpg test1.jpg t 3 P
+dog2.jpg test2.jpg H x
