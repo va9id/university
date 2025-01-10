@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+div.main-content {
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+}
+
+div.main-content h1 {
+    margin-bottom: 30px;
+}
+
+div.main-content p {
+    margin-bottom: 20px;
+}
+
+div.main-content span {
+    font-weight: bold;
+}
+
+div.main-content p {
+    font-size: 18px;
+}

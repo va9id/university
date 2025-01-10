@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Report</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/ProfessorViewReports.css}" />
+</head>
+<body>
+    <div th:insert="~{professorNavBar}" class="nav-bar"></div>
+    <div class="main-content">
+        <p class="not-in-project" th:if="${!hasProjects}">You must have Projects before viewing their Reports!</p>
+
+        <h1 class="headers" th:if="${hasProjects}" th:text="Reports"></h1>
+        <h3 class="headers" th:if="${hasProjects}" th:text="'Current Deadline: ' + ${deadline}"></h3>
+
+        <table th:if="${hasProjects}">
+            <tr>
+                <th>ID</th>
+                <th>Project Title</th>
+                <th>Report</th>
+            </tr>
+            <tr th:each="project : ${projects}">
+                <td th:text="${project.getId()}"></td>
+                <td th:text="${project.getTitle()}"></td>
+                <td>
+                    <a th:if="${project.getReport() != null}"
+                       th:text="${project.getReport().getFileName()}"
+                       th:href="'/downloadReport/' + ${project.getId()}"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

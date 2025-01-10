@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Set deadline</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/DeadlineStyles.css}" />
+</head>
+<body>
+    <div th:insert="~{professorNavBar}" class="nav-bar"></div>
+    <div class="main-content">
+        <h1>Set Deadlines</h1>
+        <form th:action="@{/deadlines/setReport}" method="post">
+            <label for="datepicker">Choose a report deadline date:</label>
+            <input type="date" id="datepicker" name="selectedDate" th:min="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" required>
+            <div class="center">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <p th:text="'Current report deadline: ' + ${reportDeadline}"></p>
+    </div>
+</body>
+</html>

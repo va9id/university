@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Presentations</title>
+  <link type="text/css" rel="stylesheet" th:href="@{/css/PresentationsStyles.css}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" th:src="@{/js/presentationsActions.js}"></script>
+</head>
+<body>
+<div th:if="${role =='ROLE_STUDENT'}" th:insert="~{studentNavBar}" class="nav-bar"></div>
+<div th:if="${role =='ROLE_PROFESSOR'}" th:insert="~{professorNavBar}" class="nav-bar"></div>
+<div class="main-content">
+  <div th:if="${(role == 'ROLE_STUDENT' && studentProject != null) || (role =='ROLE_PROFESSOR' && !projects.isEmpty())}">
+    <div th:if="${role == 'ROLE_STUDENT' && !currentAvailability.containsAll(oralPresentationTimes)}">
+      <h1>Add Oral Presentation Availability</h1>
+      <form id="add-availability-form" class="main-form" th:action="@{/presentations/oralPresentation/availability}" method="post">
+        <ul class="ul-form">
+          <li th:each="dateTime : ${oralPresentationTimes}">
+            <div th:if="${!currentAvailability.contains(dateTime)}">
+              <input class="checkbox-group" type="checkbox" th:id="'checkbox-' + ${dateTime.toString()}" name="oralPresentationAvailability" th:value="${dateTime}" />
+              <label th:for="'checkbox-' + ${dateTime.toString()}" th:text="${dateTime.toString()}"></label>
+            </div>
+          </li>
+        </ul>
+        <div class="submit-center">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Project Title</th>
+        <th>Oral Presentation Availability</th>
+        <th>Oral Presentation Date</th>
+      </tr>
+      <tr th:if="${role =='ROLE_PROFESSOR'}" th:each="project : ${projects}">
+        <td class="center-text" th:text="${project.getId()}"></td>
+        <td class="center-text" th:text="${project.getTitle()}"></td>
+        <td>
+          <ul>
+            <li th:each="student : ${project.getStudents()}" th:inline="text">
+              [[${student.getName() + ': '}]]
+              <ul>
+                <li th:each="dateTime : ${student.getOralPresentationAvailability()}" th:text="${dateTime.getDateTime().toString()}"></li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+        <td class="center-text" th:inline="text">
+          [[${project.getOralPresentationDateTime()}]]
+          <form th:if="${!possibleOralPresentationTimes.get(project.getId()).isEmpty()}" th:action="@{/presentations/oralPresentation/setDate}" method="post">
+            <ul class="ul-form">
+              <li th:each="dateTime : ${possibleOralPresentationTimes.get(project.getId())}">
+                <input type="radio" th:id="'radio-' + ${dateTime.toString()}" name="oralPresentationDate" th:value="${dateTime}" required/>
+                <label th:for="'radio-' + ${dateTime.toString()}" th:text="${dateTime.toString()}"></label>
+              </li>
+            </ul>
+            <input type="hidden" name="projectId" th:value="${project.getId()}">
+            <input type="submit" value="Select">
+          </form>
+        </td>
+      </tr>
+      <tr th:if="${role =='ROLE_STUDENT'}">
+        <td class="center-text" th:text="${studentProject.getId()}"></td>
+        <td class="center-text" th:text="${studentProject.getTitle()}"></td>
+        <td>
+          <ul>
+            <li th:each="student : ${studentProject.getStudents()}" th:inline="text">
+              [[${student.getName() + ': '}]]
+              <ul>
+                <li th:each="dateTime : ${student.getOralPresentationAvailability()}" th:text="${dateTime.getDateTime().toString()}"></li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+        <td class="center-text" th:text="${studentProject.getOralPresentationDateTime()}"></td>
+      </tr>
+    </table>
+  </div>
+  <div th:unless="${(role == 'ROLE_STUDENT' && studentProject != null) || (role =='ROLE_PROFESSOR' && !projects.isEmpty())}">
+    <p>You must join a project before viewing presentation details!</p>
+  </div>
+</div>
+</body>
+</html>

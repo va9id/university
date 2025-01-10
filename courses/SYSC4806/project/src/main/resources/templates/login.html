@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>4th year project website</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/LoginRegisterStyles.css}" />
+</head>
+<body>
+<h1>Please Log In</h1>
+<form action="#" th:action="@{/loginHandler}" method="post">
+    <div class="error-message" th:if="${param.error}">
+        Invalid username and password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+    <div>
+        <input type="text" name="email" placeholder="Email" required/>
+    </div>
+    <div>
+        <input type="password" name="password" placeholder="Password" required/>
+    </div>
+    <div class="center">
+        <input type="submit" value="Log In"/>
+    </div>
+    <div class="redirect-link">Don't have an account? Register as a <a href="/register/Student">student</a> or <a href="/register/Professor">professor</a></div>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4th year project website</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/HomePageStyles.css}" />
+</head>
+<body>
+    <div th:if="${userType=='ROLE_STUDENT'}" th:insert="~{studentNavBar}" class="nav-bar"></div>
+    <div th:if="${userType=='ROLE_PROFESSOR'}" th:insert="~{professorNavBar}" class="nav-bar"></div>
+    <div class="main-content">
+        <h1>Welcome to the 4th year project website, <span th:text="${userName}"></span>!</h1>
+        <p>
+            Your user type is: <span th:text="${userType.substring(5)}"></span>
+        </p>
+        <p th:if="${userType=='ROLE_STUDENT' && reminder != null}">
+            *Reminder: <span th:text="${reminder}"></span>
+        </p>
+    </div>
+</body>
+</html>

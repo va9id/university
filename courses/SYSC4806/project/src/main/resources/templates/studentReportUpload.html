@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Report</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/StudentReportUploadStyles.css}" />
+</head>
+<body>
+    <div th:insert="~{studentNavBar}" class="nav-bar"></div>
+    <div class="main-content">
+        <div th:if="${uploadError}" th:text="${uploadError}"></div>
+        <form th:if="${inProject && beforeDeadline}" class="container" method="POST" enctype="multipart/form-data" action="#" th:action="@{/studentReportUpload}">
+            <div class="card">
+                <h3>Upload Report File</h3>
+                <div class="drop_box">
+                    <header>
+                        <h4>Select File here</h4>
+                    </header>
+                    <p>Files Supported: PDF</p>
+                    <input name="file" type="file" accept=".pdf" id="fileID" class="file-upload" />
+                </div>
+                <div class="center">
+                    <button class="submit-button" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+        <p class="deadline-message" th:if="${inProject && beforeDeadline}" th:text="'Submission Deadline: ' + ${deadline}"></p>
+        <p th:if="${inProject}"><span>Submitted Report: </span><a th:text="${reportName}" href="/downloadReport"></a></p>
+        <p class="not-in-project" th:if="${!inProject}">You must join a project before submitting a report!</p>
+    </div>
+</body>
+</html>

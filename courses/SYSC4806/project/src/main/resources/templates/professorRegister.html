@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/LoginRegisterStyles.css}" />
+</head>
+<body>
+<h1>Professor Registration</h1>
+<form class="registration-form" th:action="@{/register/Professor}"  th:object="${professor}" method="post">
+    <div class="error-message" th:if="${param.error}">
+        A User with that email already exists!
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required="required" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" th:field="*{email}" required="required" />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" th:field="*{password}" required="required" />
+    </div>
+    <div class="center">
+        <button type="submit">Register</button>
+    </div>
+    <div class="redirect-link">Already have an account? <a href="/login"> Login</a></div>
+</form>
+</body>
+</html>

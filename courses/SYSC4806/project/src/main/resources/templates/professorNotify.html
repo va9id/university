@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notify Students</title>
+    <meta th:name="_csrf" th:content="${_csrf.token}"/>
+    <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/ProfessorNotifyStyles.css}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/notifyStudentsAction.js}"></script>
+</head>
+<body>
+<div th:insert="~{professorNavBar}" class="nav-bar"></div>
+<div class="main-content">
+    <h1>List of Students not in a group</h1>
+    <table th:if="${students != null && !students.isEmpty()}">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.getName()}"></td>
+            <td th:text="${student.getEmail()}"></td>
+            <td>
+                <button th:if="${student.getReminder() == null}" th:attr="student-id=${student.getId()}" class="notify">Notify Student</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

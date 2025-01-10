@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Navigation</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/NavBarStyles.css}" />
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-inner">
+                <ul class="nav navbar-nav">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/viewProjects">View Projects</a></li>
+                    <li><a href="/studentReportUpload">Upload Report</a></li>
+                    <li><a href="/presentations">Presentations</a></li>
+                    <li><a href="javascript: document.logoutForm.submit()">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+        <input hidden type="submit" value="Sign Out"/>
+    </form>
+</body>
+</html>

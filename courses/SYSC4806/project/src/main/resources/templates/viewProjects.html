@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Projects</title>
+    <meta th:name="_csrf" th:content="${_csrf.token}"/>
+    <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/ViewProjectsStyles.css}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/viewProjectsAction.js}"></script>
+</head>
+<body>
+    <div th:if="${isProfessor}" th:insert="~{professorNavBar}" class="nav-bar"></div>
+    <div th:unless="${isProfessor}" th:insert="~{studentNavBar}" class="nav-bar"></div>
+
+    <div class="main-content">
+        <h1>List of 4th Year Projects</h1>
+        <table th:if="${projects != null && !projects.isEmpty()}">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Program Restriction(s)</th>
+                <th>Professor</th>
+                <th>Max Number Of Students</th>
+                <th>Students</th>
+                <th>Action</th>
+            </tr>
+            <tr th:each="project : ${projects}">
+                <td th:text="${project.getId()}"></td>
+                <td th:text="${project.getTitle()}"></td>
+                <td th:text="${project.getDescription()}"></td>
+                <td>
+                    <ul th:each="program : ${project.getRestrictions()}">
+                        <li th:text="${program.getDisplayName()}"></li>
+                    </ul>
+                </td>
+                <td th:text="${project.getProfessor().getName()}"></td>
+                <td th:text="${project.getMaxStudents()}"></td>
+                <td>
+                    <ul th:each="student : ${project.getStudents()}">
+                        <li th:text="${student.getName()}"></li>
+                    </ul>
+                </td>
+                <td th:attr="project-id=${project.getId()}">
+                    <button
+                            class="delete"
+                            th:if="${isProfessor && professorUser.getProjects().contains(project)}">
+                        Delete Project
+                    </button>
+                    <button
+                            class="join"
+                            th:attr="user-id=${studentUser.getId()}"
+                            th:if="${!isProfessor
+                                    && studentUser.project == null
+                                    && project.getStudents().size() < project.getMaxStudents()
+                                    && project.getRestrictions().contains(studentUser.getProgram())}">
+                        Join Project
+                    </button>
+                    <button
+                            class="leave"
+                            th:attr="user-id=${studentUser.getId()}"
+                            th:if="${!isProfessor && studentUser.getProject()?.getId() == project.getId()}">
+                        Leave Project
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <p th:unless="${projects != null && !projects.isEmpty()}">No current 4th year projects</p>
+        <a th:if="${isProfessor}" href="/createProject"><button class="create">Create New Project</button></a>
+    </div>
+
+</body>
+</html>

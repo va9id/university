@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Project</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/ProjectCreateStyles.css}" />
+</head>
+<body>
+    <div th:insert="~{professorNavBar}" class="nav-bar"></div>
+
+    <div class="main-content">
+        <h1>Create a New 4th Year Project</h1>
+        <form action="#" th:action="@{createProject}" th:object="${project}" method="post">
+
+            <label for="project-title">Project Title: </label>
+            <input type="text" id="project-title" required="required" th:field="*{title}"><br/>
+
+            <label for="project-description">Project Description: </label>
+            <input type="text" id="project-description" required="required" th:field="*{description}"><br/>
+
+            <label for="project-restrictions">Program Restrictions: </label>
+            <select id="project-restrictions" multiple="multiple" required="required" th:field="*{restrictions}">
+                <option th:each="restriction : ${T(sysc4806.project.models.Program).values()}"
+                        th:text="${restriction.getDisplayName()}" th:value="${restriction}"></option>
+            </select>
+
+            <label for="project-max-students">Maximum Number of Students: </label>
+            <input type="number" id="project-max-students" required="required" min="1" max="4" th:field="*{maxStudents}"><br/>
+
+            <div class="center">
+                <button type="submit">Create Project</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
