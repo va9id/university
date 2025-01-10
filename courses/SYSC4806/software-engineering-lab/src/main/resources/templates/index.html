@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Page App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
+</head>
+<body>
+    <h1 class="header" th:attr="addressBookId=${id}" th:text="'Address Book ID: ' + ${id}"></h1>
+
+    <h2>Add Buddy</h2>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name"/><br/>
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone"/><br/>
+
+    <input id="add-buddy" type="button" value="Add Buddy"/>
+
+    <p>List of Buddies: </p>
+    <div class="list"></div>
+</body>
+</html>
