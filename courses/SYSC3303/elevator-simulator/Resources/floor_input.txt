@@ -1,0 +1,6 @@
+Time Floor FloorButton CarButton Fault
+14:05:15.000 1 Up 15 0
+14:05:18.097 6 Up 22 1
+14:05:25.109 19 Down 4 2
+14:05:35.228 4 Up 9 0
+14:05:45.117 12 Down 1 0
