@@ -1,0 +1,191 @@
+import java.net.*;
+import java.util.Arrays;
+
+/**
+ * Server that receives requests from the intermediate Host.
+ */
+public class Server {
+
+    private DatagramSocket socket;
+
+    /**
+     * Server constructor.
+     */
+    public Server() {
+        try {
+            socket = new DatagramSocket(69);
+        } catch (SocketException se) {
+            se.printStackTrace();
+            System.exit(1);
+        }
+    }
+
+    /**
+     * Parses the byte array to validate that it follows the correct format.
+     *
+     * @param msg byte array from the Datagram's data.
+     * @return  true if byte array is in the correct format, false otherwise.
+     */
+    private boolean parsePacketData(byte[] msg){
+        int indexEndOfFilename = findEndOfString(msg, 2);
+        int indexEndOfMode = findEndOfString(msg, indexEndOfFilename + 1);
+        boolean isRestOfDataEmpty = restOfDataIsEmpty(msg, indexEndOfMode + 1) ;
+        return msg[0] == 0 &&
+                (msg[1] == 1 || msg[1] == 2) &&
+                msg[indexEndOfFilename] == 0 &&
+                msg[indexEndOfMode] == 0 &&
+                isRestOfDataEmpty;
+    }
+
+    /**
+     * Finds the end of the string in the array of bytes.
+     * Helper method for packetParser.
+     *
+     * @param msg   byte array from the Datagram's data.
+     * @param pos   index of beginning of string in the byte array.
+     * @return  index after the string ends.
+     */
+    private int findEndOfString(byte[] msg, int pos) {
+        for(int i = pos; i < msg.length; i++) {
+            if (msg[i] == 0) {
+                pos = i;
+                break;
+            }
+        }
+        return pos;
+    }
+
+    /**
+     * Checks if remaining indices in the byte array are empty (==0).
+     * Helper method for parsePacketData.
+     *
+     * @param msg   byte array from the Datagram's data.
+     * @param pos   index to begin iterating through the byte array.
+     * @return  true if the rest of the byte array is empty, false otherwise.
+     */
+    private boolean restOfDataIsEmpty(byte[] msg, int pos) {
+        for(int i = pos; i < msg.length; i++) {
+            if (msg[i] != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Checks if byte is read or write.
+     *
+     * @param msg   byte array from the Datagram's data.
+     * @return  true if the byte is read, false otherwise.
+     */
+    private boolean readOrWrite(byte[] msg) {
+        return msg[1] == 1;
+    }
+
+    /**
+     * Generates the server response's Datagram's data as a byte array.
+     *
+     * @param read  true if return response is read, false if it's write.
+     * @return  byte array from the Datagram's data.
+     */
+    private byte[] generateData(boolean read) {
+        byte[] msg = new byte[4];
+        msg[0] = msg[2] = 0;
+        if (read) {
+            msg[1] = 3;
+            msg[3] = 1;
+        } else {
+            msg[1] = 4;
+            msg[3] = 0;
+        }
+        return msg;
+    }
+
+    /**
+     * Helper method to print to the console Datagrams that are sent
+     * from server or received by it.
+     *
+     * @param dp    DatagramPacket being printed.
+     * @param sending   true if datagram is being sent from the server, false if it's being received.
+     */
+    private void printPacket(DatagramPacket dp, boolean sending) {
+        String s;
+        if (sending) {
+            s = "SERVER sending packet to ";
+        }
+        else {
+            s = "SERVER received packet from ";
+        }
+        System.out.println(s + "INTERMEDIATE containing:");
+        System.out.println("\tAs Bytes: " + Arrays.toString(dp.getData()) +
+                "\n\tAs String: "+ new String(dp.getData(), 0, dp.getLength()) + "\n");
+    }
+
+    /**
+     * Program loop where the server waits to receive a datagram from the host, and sends
+     * the corresponding response back to the host.
+     */
+    public void serverCommunication(){
+        while (true) {
+            try {
+                //Send request for data to Intermediate
+                String s = "Send me data";
+                DatagramPacket sendDataPacket = new DatagramPacket(
+                        s.getBytes(),
+                        s.getBytes().length,
+                        InetAddress.getLocalHost(),
+                        68
+
+                );
+                printPacket(sendDataPacket, true);
+                socket.send(sendDataPacket);
+
+                //Receive packet from Intermediate with client data
+                byte[] hostData = new byte[25];
+                DatagramPacket receivePacket = new DatagramPacket(hostData, hostData.length);
+                socket.receive(receivePacket);
+                printPacket(receivePacket, false);
+                hostData = receivePacket.getData();
+                boolean isValid = parsePacketData(hostData);
+                if (!isValid) {
+                    socket.close();
+                    throw new Exception("SERVER received an INVALID REQUEST");
+                }
+
+                //Send response packet back to Intermediate on new socket
+                boolean isRead = readOrWrite(hostData);
+                byte[] serverResponse = generateData(isRead);
+                DatagramPacket sendAcknowledgementPacket = new DatagramPacket(
+                        serverResponse,
+                        serverResponse.length,
+                        InetAddress.getLocalHost(),
+                        receivePacket.getPort());
+                printPacket(sendAcknowledgementPacket, true);
+                DatagramSocket tempSocket = new DatagramSocket();
+                tempSocket.send(sendAcknowledgementPacket);
+                tempSocket.close();
+
+                //Receive acknowledgment reply from Intermediate
+                byte[] hostReplyData = new byte[28];
+                DatagramPacket receiveReplyPacket = new DatagramPacket(hostReplyData, hostReplyData.length);
+                socket.receive(receiveReplyPacket);
+                printPacket(receiveReplyPacket, false);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                socket.close();
+                System.exit(1);
+            }
+        }
+    }
+
+    /**
+     * Main function that instantiates a server and runs it.
+     *
+     * @param args
+     */
+    public static void main(String args[]) {
+        Server s = new Server();
+        s.serverCommunication();
+    }
+}
